@@ -1,0 +1,32 @@
+================================================================================
+                    MOBILE ACCESS LINK
+================================================================================
+
+LOCAL NETWORK URL (Same WiFi):
+http://10.51.122.106:8000
+
+Steps:
+1. Start server: python -m http.server 8000
+2. Make sure mobile is on SAME WiFi
+3. Open this URL on mobile: http://10.51.122.106:8000
+
+================================================================================
+ONLINE DEPLOYMENT (Works Anywhere - RECOMMENDED)
+================================================================================
+
+Deploy to Netlify (Free, 2 minutes):
+https://www.netlify.com
+
+After deployment, you'll get a link like:
+https://your-site-name.netlify.app
+
+This link works on ANY device, ANYWHERE!
+
+================================================================================
+QUICK COPY LINK
+================================================================================
+
+http://10.51.122.106:8000
+
+================================================================================
+

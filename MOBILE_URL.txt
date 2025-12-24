@@ -1,0 +1,40 @@
+================================================================================
+                    MOBILE ACCESS URL
+================================================================================
+
+YOUR COMPUTER'S IP ADDRESS: 10.51.122.106
+
+================================================================================
+LOCAL NETWORK URL (Same WiFi Only)
+================================================================================
+
+http://10.51.122.106:8000
+
+Steps:
+1. Start server (double-click start-server.bat or run: python -m http.server 8000)
+2. Make sure mobile is on SAME WiFi
+3. Open this URL on mobile: http://10.51.122.106:8000
+
+================================================================================
+ONLINE DEPLOYMENT (Works Anywhere - RECOMMENDED)
+================================================================================
+
+Best Option: Deploy to Netlify
+1. Go to: https://www.netlify.com
+2. Sign up (free)
+3. Drag and drop your project folder
+4. Get URL like: your-site.netlify.app
+5. Share this URL - works on any device!
+
+================================================================================
+QUICK START SERVER
+================================================================================
+
+If Python installed:
+  python -m http.server 8000
+
+Then access from mobile:
+  http://10.51.122.106:8000
+
+================================================================================
+

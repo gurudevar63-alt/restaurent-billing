@@ -1,0 +1,59 @@
+================================================================================
+                    MOBILE ACCESS - QUICK GUIDE
+================================================================================
+
+YOUR COMPUTER'S IP ADDRESS: 10.51.122.106
+
+================================================================================
+OPTION 1: DEPLOY ONLINE (BEST - Works Anywhere!)
+================================================================================
+
+👉 EASIEST WAY: Use Netlify (Free, 2 minutes)
+
+1. Go to: https://www.netlify.com
+2. Click "Sign up" (use Google account - free)
+3. Drag and drop your ENTIRE project folder
+4. Get instant URL like: your-site-name.netlify.app
+5. Share this URL - works on ANY device, ANYWHERE!
+
+✅ Benefits:
+   - Works on mobile, tablet, any device
+   - Shareable link
+   - No server setup needed
+   - Free forever
+
+================================================================================
+OPTION 2: LOCAL NETWORK (Same WiFi Only)
+================================================================================
+
+To access from mobile on same WiFi:
+
+1. INSTALL PYTHON (if not installed):
+   - Download: https://www.python.org/downloads/
+   - Install Python (check "Add to PATH" during installation)
+
+2. START SERVER:
+   - Double-click: start-server.bat
+   - OR open PowerShell in this folder and run:
+     python -m http.server 8000
+
+3. ON YOUR MOBILE:
+   - Make sure mobile is on SAME WiFi network
+   - Open mobile browser
+   - Type: http://10.51.122.106:8000
+   - Website will load!
+
+================================================================================
+QUICK ACCESS URLS
+================================================================================
+
+Local Network (if server running):
+  http://10.51.122.106:8000
+
+On This Computer:
+  http://localhost:8000
+
+================================================================================
+RECOMMENDED: Deploy to Netlify for best mobile experience!
+================================================================================
+

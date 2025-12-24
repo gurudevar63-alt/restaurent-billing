@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Restaurant Billing System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation Tabs -->
+        <nav class="nav-tabs">
+            <button class="tab-btn active" data-tab="billing">Billing</button>
+            <button class="tab-btn" data-tab="manage-menu">Manage Menu</button>
+            <button class="tab-btn" data-tab="sales-report">Sales Report</button>
+        </nav>
+
+        <!-- Billing Section -->
+        <section id="billing" class="tab-content active">
+            <div class="billing-container">
+                <!-- Menu Display -->
+                <div class="menu-section">
+                    <h2>Menu</h2>
+                    <div id="menu-grid" class="menu-grid">
+                        <!-- Menu items will be dynamically loaded here -->
+                    </div>
+                </div>
+
+                <!-- Cart Section -->
+                <div class="cart-section">
+                    <h2>Cart</h2>
+                    <div id="cart-items" class="cart-items">
+                        <p class="empty-cart">Cart is empty</p>
+                    </div>
+                    <div class="cart-footer">
+                        <div class="cart-total">
+                            <strong>Total: ₹<span id="cart-total">0.00</span></strong>
+                        </div>
+                        <div class="cart-actions">
+                            <button id="clear-cart" class="btn btn-secondary">Clear Cart</button>
+                            <button id="pay-now" class="btn btn-primary" disabled>Pay Now</button>
+                            <button id="print-bill" class="btn btn-secondary" disabled>Print Bill</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Manage Menu Section -->
+        <section id="manage-menu" class="tab-content">
+            <div class="manage-menu-container">
+                <h2>Manage Menu</h2>
+                
+                <!-- Add/Edit Form -->
+                <div class="menu-form-container">
+                    <form id="menu-form" class="menu-form">
+                        <input type="hidden" id="menu-item-id">
+                        
+                        <div class="form-group">
+                            <label for="menu-name">Item Name</label>
+                            <input type="text" id="menu-name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="menu-price">Price (₹)</label>
+                            <input type="number" id="menu-price" step="0.01" min="0" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="menu-image">Image URL or Path</label>
+                            <input type="text" id="menu-image" placeholder="https://example.com/image.jpg or images/item-name.jpg" required>
+                            <small style="color: #7f8c8d; font-size: 12px; margin-top: 5px; display: block;">You can use web URLs (https://) or local paths (images/...)</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="menu-description">Description</label>
+                            <textarea id="menu-description" rows="3"></textarea>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary" id="save-menu-item">Add Item</button>
+                            <button type="button" class="btn btn-secondary" id="cancel-edit">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Menu Items List -->
+                <div class="menu-items-list">
+                    <h3>Menu Items</h3>
+                    <div id="menu-items-grid" class="menu-items-grid">
+                        <!-- Menu items will be displayed here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sales Report Section -->
+        <section id="sales-report" class="tab-content">
+            <div class="sales-report-container">
+                <h2>Monthly Sales Report</h2>
+                
+                <!-- Filters -->
+                <div class="report-filters">
+                    <div class="filter-group">
+                        <label for="report-month">Month</label>
+                        <select id="report-month">
+                            <option value="01">January</option>
+                            <option value="02">February</option>
+                            <option value="03">March</option>
+                            <option value="04">April</option>
+                            <option value="05">May</option>
+                            <option value="06">June</option>
+                            <option value="07">July</option>
+                            <option value="08">August</option>
+                            <option value="09">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="report-year">Year</label>
+                        <input type="number" id="report-year" min="2020" max="2099" value="2024">
+                    </div>
+                    <button id="generate-report" class="btn btn-primary">Generate Report</button>
+                </div>
+
+                <!-- Report Display -->
+                <div id="report-results" class="report-results">
+                    <div class="report-summary">
+                        <div class="summary-card">
+                            <h3>Total Revenue</h3>
+                            <p class="summary-value">₹<span id="total-revenue">0.00</span></p>
+                        </div>
+                        <div class="summary-card">
+                            <h3>Total Orders</h3>
+                            <p class="summary-value"><span id="total-orders">0</span></p>
+                        </div>
+                        <div class="summary-card">
+                            <h3>Average Order Value</h3>
+                            <p class="summary-value">₹<span id="avg-order-value">0.00</span></p>
+                        </div>
+                    </div>
+
+                    <div class="report-details">
+                        <h3>Item-wise Sales</h3>
+                        <table id="item-sales-table" class="sales-table">
+                            <thead>
+                                <tr>
+                                    <th>Item Name</th>
+                                    <th>Quantity Sold</th>
+                                    <th>Revenue</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Report data will be displayed here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Payment QR Code Modal -->
+    <div id="payment-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Payment</h2>
+            <div class="payment-details">
+                <p><strong>Amount to Pay: ₹<span id="payment-amount">0.00</span></strong></p>
+                <div id="qr-code-container" class="qr-code-container">
+                    <!-- QR code will be generated here -->
+                </div>
+                <p class="payment-note">
+                    <strong>Payment Instructions:</strong><br>
+                    1. Scan the QR code with any UPI app (Google Pay, PhonePe, Paytm, etc.)<br>
+                    2. Complete the payment in your UPI app<br>
+                    3. Click "Confirm Payment" below after payment is successful
+                </p>
+                <p style="font-size: 12px; color: #7f8c8d; margin-top: 10px; background: #f8f9fa; padding: 8px; border-radius: 5px;">
+                    <strong>UPI ID:</strong> gurudevar24@okicici
+                </p>
+                <button id="confirm-payment" class="btn btn-primary" style="margin-top: 15px;">✅ Confirm Payment Received</button>
+                <button id="cancel-payment" class="btn btn-secondary">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Print Bill Section (Hidden, shown only when printing) -->
+    <div id="print-bill-content" class="print-bill-content">
+        <div class="bill-header">
+            <h1>Restaurant Bill</h1>
+            <p>Date: <span id="bill-date"></span></p>
+            <p>Bill No: <span id="bill-number"></span></p>
+        </div>
+        <table class="bill-table">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody id="bill-items">
+                <!-- Bill items will be populated here -->
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3"><strong>Grand Total</strong></td>
+                    <td><strong>₹<span id="bill-total">0.00</span></strong></td>
+                </tr>
+            </tfoot>
+        </table>
+        <div class="bill-footer">
+            <p>Thank you for your visit!</p>
+        </div>
+    </div>
+
+    <!-- Razorpay Script -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <!-- QR Code Library -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+    <!-- Main Script -->
+    <script src="script.js"></script>
+</body>
+</html>

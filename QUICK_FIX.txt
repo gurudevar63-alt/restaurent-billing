@@ -1,0 +1,83 @@
+================================================================================
+                    CONNECTION NOT WORKING - QUICK FIX
+================================================================================
+
+PROBLEM: Mobile can't connect to http://10.51.122.106:8000
+
+================================================================================
+SOLUTION 1: START THE SERVER (If not running)
+================================================================================
+
+1. Double-click: fix-connection.bat
+   OR
+2. Open PowerShell in project folder and run:
+   python -m http.server 8000
+
+3. You should see: "Serving HTTP on 0.0.0.0 port 8000"
+
+4. Then try mobile URL: http://10.51.122.106:8000
+
+================================================================================
+SOLUTION 2: CHECK FIREWALL (Most Common Issue!)
+================================================================================
+
+Windows Firewall might be blocking the connection:
+
+1. Open Windows Security
+2. Go to Firewall & network protection
+3. Click "Allow an app through firewall"
+4. Find Python and check "Private" network
+5. OR temporarily disable firewall to test
+
+Quick way:
+- Settings > Windows Security > Firewall > Turn off (temporarily)
+- Test connection
+- Turn back on after testing
+
+================================================================================
+SOLUTION 3: VERIFY SAME WIFI
+================================================================================
+
+Both devices MUST be on same WiFi:
+
+1. Check WiFi name on computer
+2. Check WiFi name on mobile
+3. They must match exactly!
+4. Try disconnecting and reconnecting mobile WiFi
+
+================================================================================
+SOLUTION 4: DEPLOY ONLINE (BEST - No Connection Issues!)
+================================================================================
+
+Avoid all connection problems by deploying online:
+
+1. Go to: https://www.netlify.com
+2. Sign up (free, use Google)
+3. Drag and drop your ENTIRE project folder
+4. Get instant URL: your-site.netlify.app
+5. Works on ANY device, ANYWHERE!
+
+✅ No server setup needed
+✅ No firewall issues
+✅ No WiFi restrictions
+✅ Works everywhere!
+
+================================================================================
+YOUR CURRENT IP: 10.51.122.106
+================================================================================
+
+Mobile URL (when server running):
+http://10.51.122.106:8000
+
+================================================================================
+TEST STEPS
+================================================================================
+
+1. Start server: python -m http.server 8000
+2. On computer, test: http://localhost:8000
+3. If computer works, try mobile: http://10.51.122.106:8000
+4. If mobile doesn't work, check firewall
+5. If still not working, deploy to Netlify (easiest!)
+
+================================================================================
+

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Access Link</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+        .option {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid #3498db;
+        }
+        .option h2 {
+            color: #3498db;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        .ip-box {
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            font-size: 24px;
+            font-weight: bold;
+            word-break: break-all;
+        }
+        .url-box {
+            background: #ecf0f1;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 16px;
+            margin: 10px 0;
+            word-break: break-all;
+            border: 2px solid #3498db;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: #27ae60;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 15px 0;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #229954;
+        }
+        .btn-secondary {
+            background: #3498db;
+        }
+        .btn-secondary:hover {
+            background: #2980b9;
+        }
+        .steps {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .steps ol {
+            margin-left: 20px;
+            line-height: 2;
+        }
+        .warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .success {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .qr-placeholder {
+            background: #f8f9fa;
+            padding: 40px;
+            text-align: center;
+            border-radius: 8px;
+            margin: 15px 0;
+            border: 2px dashed #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📱 Mobile Access Link</h1>
+        
+        <div class="option">
+            <h2>🚀 Option 1: Deploy Online (BEST - Works Anywhere!)</h2>
+            <p><strong>Recommended for easy mobile access from anywhere</strong></p>
+            
+            <a href="https://www.netlify.com" target="_blank" class="btn">Deploy to Netlify (Free - 2 minutes)</a>
+            <a href="https://github.com" target="_blank" class="btn btn-secondary">Deploy to GitHub Pages</a>
+            
+            <div class="steps">
+                <strong>Quick Steps:</strong>
+                <ol>
+                    <li>Go to <strong>Netlify.com</strong> and sign up (free)</li>
+                    <li>Drag and drop your entire project folder</li>
+                    <li>Get instant URL like: <code>your-site.netlify.app</code></li>
+                    <li>Share this URL - works on any device, anywhere!</li>
+                </ol>
+            </div>
+            
+            <div class="success">
+                <strong>✅ Benefits:</strong>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>Works on mobile, tablet, any device</li>
+                    <li>Shareable link</li>
+                    <li>No server setup needed</li>
+                    <li>Free forever</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="option">
+            <h2>🏠 Option 2: Local Network Access (Same WiFi)</h2>
+            <p><strong>Access from mobile when both devices are on same WiFi</strong></p>
+            
+            <div class="ip-box">
+                Your Computer's IP:<br>
+                10.51.122.106
+            </div>
+            
+            <div class="url-box">
+                http://10.51.122.106:8000
+            </div>
+            
+            <div class="steps">
+                <strong>Steps to Start Server:</strong>
+                <ol>
+                    <li><strong>Install Python</strong> (if not installed):
+                        <br><a href="https://www.python.org/downloads/" target="_blank">Download Python</a>
+                    </li>
+                    <li><strong>Start Server:</strong>
+                        <ul style="margin-top: 10px;">
+                            <li>Double-click <code>start-server.bat</code> file, OR</li>
+                            <li>Open PowerShell in project folder and run:<br>
+                                <code style="background: #2c3e50; color: white; padding: 5px; border-radius: 3px;">python -m http.server 8000</code>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>On Your Mobile:</strong>
+                        <ul style="margin-top: 10px;">
+                            <li>Make sure mobile is on <strong>same WiFi</strong></li>
+                            <li>Open mobile browser</li>
+                            <li>Type: <code>http://10.51.122.106:8000</code></li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning">
+                <strong>⚠️ Important:</strong> Both devices must be on the same WiFi network!
+            </div>
+        </div>
+
+        <div class="option">
+            <h2>📋 Quick Reference</h2>
+            <div class="url-box" style="text-align: center; font-size: 18px;">
+                <strong>Local Network URL:</strong><br>
+                http://10.51.122.106:8000
+            </div>
+            
+            <p style="text-align: center; margin-top: 15px; color: #7f8c8d;">
+                Copy this URL and open on your mobile browser<br>
+                (when server is running)
+            </p>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 2px solid #ecf0f1;">
+            <p style="color: #7f8c8d;">
+                <strong>Recommended:</strong> Deploy to Netlify for easiest mobile access!
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+

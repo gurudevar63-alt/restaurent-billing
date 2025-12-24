@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Deploy Guide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        h1 { color: #2c3e50; }
+        h2 { color: #3498db; margin-top: 30px; }
+        .ip-address {
+            background: #3498db;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 24px;
+            text-align: center;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        .url-box {
+            background: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: monospace;
+            word-break: break-all;
+            margin: 10px 0;
+        }
+        .btn {
+            background: #27ae60;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px 5px;
+        }
+        .btn:hover { background: #229954; }
+        .btn-secondary {
+            background: #3498db;
+        }
+        .btn-secondary:hover { background: #2980b9; }
+        ol { line-height: 2; }
+        .warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>📱 Mobile Access Guide</h1>
+        
+        <h2>Option 1: Deploy Online (Recommended)</h2>
+        <p><strong>Best for sharing and mobile access anywhere!</strong></p>
+        
+        <a href="https://www.netlify.com" target="_blank" class="btn">🚀 Deploy to Netlify (Free)</a>
+        <a href="https://github.com" target="_blank" class="btn btn-secondary">📦 Deploy to GitHub Pages</a>
+        
+        <ol>
+            <li>Go to <strong>Netlify.com</strong> and sign up (free)</li>
+            <li>Drag and drop your entire project folder</li>
+            <li>Get instant URL like: <code>your-site.netlify.app</code></li>
+            <li>Share this URL - works on any device!</li>
+        </ol>
+        
+        <div class="warning">
+            <strong>⚠️ Note:</strong> This is the easiest way to access from mobile. No setup needed!
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Option 2: Local Network Access</h2>
+        <p>Access from mobile when both devices are on same WiFi</p>
+        
+        <h3>Your Computer's IP Address:</h3>
+        <div class="ip-address">10.51.122.106</div>
+        
+        <h3>Steps:</h3>
+        <ol>
+            <li><strong>Start Local Server:</strong>
+                <ul>
+                    <li>Double-click <code>start-server.bat</code> file</li>
+                    <li>Or install Python and run: <code>python -m http.server 8000</code></li>
+                </ul>
+            </li>
+            <li><strong>On Your Mobile:</strong>
+                <ul>
+                    <li>Make sure mobile is on same WiFi</li>
+                    <li>Open browser and go to:</li>
+                </ul>
+                <div class="url-box">http://10.51.122.106:8000</div>
+            </li>
+        </ol>
+        
+        <div class="warning">
+            <strong>⚠️ Important:</strong> Both devices must be on the same WiFi network!
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Quick Start Server</h2>
+        <p>If you have Python installed:</p>
+        <div class="url-box">
+            python -m http.server 8000
+        </div>
+        <p>Then access from mobile: <strong>http://10.51.122.106:8000</strong></p>
+    </div>
+</body>
+</html>
+

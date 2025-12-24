@@ -1,0 +1,45 @@
+================================================================================
+                    LAPTOP/COMPUTER ACCESS LINK
+================================================================================
+
+LOCAL ACCESS URL (When Server Running):
+http://localhost:8000
+
+================================================================================
+DIRECT FILE ACCESS (No Server Needed)
+================================================================================
+
+FILE PATH:
+C:\Users\Guru Devar\billing website\index.html
+
+QUICK ACCESS:
+Just double-click the "index.html" file in your project folder!
+
+================================================================================
+TWO WAYS TO ACCESS
+================================================================================
+
+METHOD 1: Through Web Server (Recommended)
+- Start server: python -m http.server 8000
+- Open browser: http://localhost:8000
+- Works with all features
+
+METHOD 2: Direct File Access (Easiest)
+- Double-click: index.html
+- Opens directly in browser
+- All features work (localStorage, etc.)
+
+================================================================================
+QUICK COPY LINK
+================================================================================
+
+http://localhost:8000
+
+================================================================================
+MOBILE ACCESS (Same WiFi)
+================================================================================
+
+http://10.51.122.106:8000
+
+================================================================================
+
